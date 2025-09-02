@@ -180,7 +180,8 @@ export default function ClinicLocator() {
                     <h3 className="font-medium text-lg">{selectedClinic.name}</h3>
                     <p className="text-sm text-muted-foreground">{selectedClinic.address}</p>
                   </div>
-                  <Badge variant={selectedClinic.isOpen ? "success" : "secondary"}>
+                  <Badge variant={selectedClinic.isOpen ? "default" : "secondary"}>
+
                     {selectedClinic.isOpen ? "Open Now" : "Closed"}
                   </Badge>
                 </div>
