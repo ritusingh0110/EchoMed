@@ -79,7 +79,7 @@ import { useDrEcho } from "@/components/ai-assistant/dr-echo-context";
 import { generateMentalWellnessResponse } from "@/lib/mentalWellnessRecommendations";
 import { AnimatedHeart } from '@/components/ui/animated-heart';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import "../../styles/mental-wellness.css"; // Corrected import path
+import "../../styles/mental-wellness.module.css"; // Import CSS module (uses :global for class names)
 
 // Function to render the floating heart icon
 function FloatingHeartIcon() {
