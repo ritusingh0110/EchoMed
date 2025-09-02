@@ -21,7 +21,7 @@ import { Button } from "@/components/ui/button";
 
 interface Symptom {
   name: string;
-  icon: JSX.Element;
+  icon: React.ReactNode;  // ✅ works with Vercel
   category: Category;
 }
 
