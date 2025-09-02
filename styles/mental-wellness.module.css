@@ -1,43 +1,79 @@
-:global {
-  /* Placeholder styles for the mental wellness page */
+:global(.floating-heart-icon) {
+  position: absolute;
+  right: 2rem;
+  top: 6rem;
+  z-index: 10;
+  display: none;
+}
 
-  .floating-heart-icon {
-    position: absolute;
-    right: 2rem;
-    top: 6rem;
-    z-index: 10;
-    display: none;
-  }
+:global(.mood-metric-container) {
+  position: relative;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  .mood-metric-container,
-  .anxiety-metric-container,
-  .sleep-metric-container,
-  .energy-metric-container,
-  .focus-metric-container {
-    position: relative;
-    padding: 1rem;
-    border-radius: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+:global(.anxiety-metric-container) {
+  position: relative;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  .mood-label,
-  .anxiety-label,
-  .sleep-label,
-  .energy-label,
-  .focus-label {
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-  }
+:global(.sleep-metric-container) {
+  position: relative;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  .hidden-range-input {
-    display: none;
-  }
+:global(.energy-metric-container) {
+  position: relative;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  .slider-thumb-custom {
-    position: absolute;
-    height: 1rem;
-    width: 1rem;
-    background-color: #3b82f6;
-    border-radius: 50%;
-  }
+:global(.focus-metric-container) {
+  position: relative;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+:global(.mood-label) {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+:global(.anxiety-label) {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+:global(.sleep-label) {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+:global(.energy-label) {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+:global(.focus-label) {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+:global(.hidden-range-input) {
+  display: none;
+}
+
+:global(.slider-thumb-custom) {
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  background-color: #3b82f6;
+  border-radius: 50%;
 }
