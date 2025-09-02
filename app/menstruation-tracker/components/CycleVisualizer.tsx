@@ -1,16 +1,16 @@
 'use client';
 
+import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Droplet, Flower2, Sun, Moon } from "lucide-react";
-import { useState } from "react";
 
 interface Phase {
   name: string;
-  icon: JSX.Element;
+  icon: React.ReactNode;  // ✅ Correct type
   color: string;
   startDay: number;
   endDay: number;
-  description: string;
+  description: string;    // ✅ Added to match your phases array
 }
 
 interface CycleVisualizerProps {
@@ -26,7 +26,7 @@ const phases: Phase[] = [
     color: "text-red-500",
     startDay: 1,
     endDay: 5,
-    description: "Menstruation phase - Your period begins"
+    description: "Menstruation phase - Your period begins",
   },
   {
     name: "Follicular",
@@ -34,7 +34,7 @@ const phases: Phase[] = [
     color: "text-pink-500",
     startDay: 6,
     endDay: 14,
-    description: "Follicular phase - Preparing for ovulation"
+    description: "Follicular phase - Preparing for ovulation",
   },
   {
     name: "Ovulatory",
@@ -42,7 +42,7 @@ const phases: Phase[] = [
     color: "text-yellow-500",
     startDay: 15,
     endDay: 17,
-    description: "Ovulation phase - Release of egg"
+    description: "Ovulation phase - Release of egg",
   },
   {
     name: "Luteal",
@@ -50,17 +50,17 @@ const phases: Phase[] = [
     color: "text-purple-500",
     startDay: 18,
     endDay: 28,
-    description: "Luteal phase - Post-ovulation period"
-  }
+    description: "Luteal phase - Post-ovulation period",
+  },
 ];
 
-function PhaseCard({ 
-  phase, 
-  isSelected, 
-  onClick 
-}: { 
-  phase: Phase; 
-  isSelected: boolean; 
+function PhaseCard({
+  phase,
+  isSelected,
+  onClick,
+}: {
+  phase: Phase;
+  isSelected: boolean;
   onClick: () => void;
 }) {
   return (
@@ -74,9 +74,7 @@ function PhaseCard({
     >
       <div className="flex items-center gap-2">
         <span className={phase.color}>{phase.icon}</span>
-        <span className={`font-medium ${phase.color}`}>
-          {phase.name}
-        </span>
+        <span className={`font-medium ${phase.color}`}>{phase.name}</span>
       </div>
       <div className="text-sm text-gray-500 mt-1">
         Days {phase.startDay}-{phase.endDay}
@@ -98,7 +96,11 @@ export default function CycleVisualizer({
   const [selectedPhase, setSelectedPhase] = useState<string | null>(null);
 
   const getCurrentPhase = () => {
-    return phases.find(phase => currentDay >= phase.startDay && currentDay <= phase.endDay) || phases[0];
+    return (
+      phases.find(
+        (phase) => currentDay >= phase.startDay && currentDay <= phase.endDay
+      ) || phases[0]
+    );
   };
 
   const currentPhase = getCurrentPhase();
